@@ -20,6 +20,18 @@ public class EnemyGOD : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // 일정시간에 한번씩 적을 만들고 싶다.
+        // 1. 시간이 흘러야한다.
+        currentTime += Time.deltaTime;
+        // 2. 생성시간이 됐으니까
+        // -> 만약 경과 시간이 생성시간을 초과했다면
+        if (currentTime > createTime)
+        {
+            // 3. 적이 있어야 한다.
+            GameObject enemy = Instantiate(enemyFactory);
+            // 4. 적을 배치하고 싶다.
+            enemy.transform.position = transform.position;
+            currentTime = 0;
+        }
     }
 }
