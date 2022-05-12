@@ -8,6 +8,8 @@ public class PlayerFire : MonoBehaviour
 {
     // 필요속성 : 총알공장
     public GameObject bulletFactory;
+    // 총구
+    public GameObject firePosition;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +28,7 @@ public class PlayerFire : MonoBehaviour
             // 2. 총알이 있어야한다.
             GameObject bullet = Instantiate(bulletFactory);
             // 3. 총알을 위치시킨다. (발사)
-            bullet.transform.position = transform.position;
+            bullet.transform.position = firePosition.transform.position;
         }
     }
 }
