@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public float speed = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class PlayerMove : MonoBehaviour
         Vector3 dir = Vector3.right * x + Vector3.up * y;        
         // 3. 이동하고 싶다.
         // P = P0 + vt
-        transform.position = transform.position + dir * 5 * Time.deltaTime;
+        transform.position = transform.position + dir * speed * Time.deltaTime;
 
         // 계속 오른쪽으로 이동하고 싶다. 
         //transform.Translate(Vector3.right * 5 * Time.deltaTime);
